@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>java script Events  </title>
+    <style>
+        body {
+         
+            text-align: center;
+         
+        }
+        .button, .input-field {
+            margin: 10px;
+            padding: 10px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body onload="pageLoaded()">
+
+    <h1>javaScript events Chirakhan </h1>
+
+    <!-- Mouse Click Event -->
+    <button class="button" onclick="mouseClicked()">click me!</button>
+    <p id="clickMessage" class="hidden">You clicked the button!</p>
+
+    <!-- Page Loaded Event -->
+    <p>The page has loaded. Check the alert box when the page opens.</p>
+
+    <!-- Image Loaded Event -->
+    <p> image loads:</p>
+    <img style="height: 100px;" src="project1.jpg" alt="Sample Image" onload="imageLoaded()" />
+    <p id="imageMessage" class="hidden">The image successfully loaded!</p>
+
+    <!-- Mouse Hover Event -->
+    <p>Hover over this text: <span id="hoverText" onmouseover="mouseHovered()" style="color:red; cursor: pointer;">Hover me!</span></p>
+
+    <!-- Input Field Change Event -->
+    <input class="input-field" id="inputField" type="text" placeholder="Type something..." onchange="inputChanged()" />
+    <p id="inputMessage" class="hidden">You changed the input field!</p>
+
+    <!-- Form Submit Event -->
+    <form onsubmit="formSubmitted(event)">
+        <h2>Contact Us</h2>
+        <input class="input-field" type="text" id="name" placeholder="Your Name" required><br>
+        <input class="input-field" type="email" id="email" placeholder="Your Email" required><br>
+        <button class="button" type="submit">Submit</button>
+    </form>
+    <p id="formMessage" class="hidden">successfulllllllll!</p>
+
+    <!-- Key Press Event -->
+    <p>Press any key and see what happensss :D</p>
+    <p id="keyMessage"></p>
+
+    <script>
+        // When the page has loaded
+        function pageLoaded() {
+            alert("The page has fully loaded!");
+        }
+
+        // When a user clicks the mouse
+        function mouseClicked() {
+            document.getElementById("clickMessage").style.display = "block";
+        }
+
+        // When an image has been loaded
+        function imageLoaded() {
+            document.getElementById("imageMessage").style.display = "block";
+        }
+
+        // When the mouse moves over an element
+        function mouseHovered() {
+            alert("You hovered over the text!");
+        }
+
+        // When an input field is changed
+        function inputChanged() {
+            document.getElementById("inputMessage").style.display = "block";
+        }
+
+        // When an HTML form is submitted
+        function formSubmitted(event) {
+            event.preventDefault(); // Prevent the page from reloading
+            document.getElementById("formMessage").style.display = "block";
+        }
+
+        
+    </script>
+</body>
+</html>
